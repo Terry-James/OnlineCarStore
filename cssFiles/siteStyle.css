@@ -47,12 +47,12 @@ body{
 
 .mainNav ul{
     background-color: #373F51;
-    padding: 20px;
+    padding: 10px;
 }
 
 .mainNav button{
     border-radius: 5px;
-    width: 100px;
+    width: auto;
     height: 25px;
 }
 
@@ -60,13 +60,13 @@ body{
     list-style-type: none;
     float: left;
     color: white;
-    padding: 10px;
+    padding: 5px;
     margin-left: 10px; 
 }
 
 #searchBar{
     padding: 10px;
-    padding-left: 80%; 
+    padding-left: 75%; 
 }
 
 button:hover{
