@@ -6,15 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="cssFiles/siteStyle.css">
+    <link rel="stylesheet" href="cssFiles/siteStyle.css">
     <script src="javascript/siteScript.js"></script>
 </head>
 
 <body>
-    <div id="heading">
-        <h2> Welcome To A Car Store</h2>
+    <div id="mainBody">
+        <div id="heading">
+            <p> Welcome To Car Shop</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div id="login">
+                    <h2>Login</h2>
+                    <form action="phpFiles/processing.php" method="POST">
+                        <input type="email" name="userEmail" placeholder="Email">
+                        <input type="password" name="userPassword" placeholder="Password">
+                        <input type="submit" class="subButton">
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div id="registration">
+                    <h2>Registration</h2>
+                    <form action="phpFiles/processing.php" method="POST">
+                        <input type="text" name="firstName" placeholder="First Name">
+                        <input type="text" name="lastName" placeholder="Last Name">
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="password" name="password" placeholder="Password">
+                        <input type="submit" class="subButton">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
-
 </html>
