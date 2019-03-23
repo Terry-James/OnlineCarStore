@@ -70,22 +70,13 @@ body{
     list-style-type: none;
     float: left;
     color: white;
-<<<<<<< HEAD
-    padding: 5px;
-    margin-left: 10px; 
-=======
     padding: 10px;
     margin-left: 10px;
->>>>>>> bb5fe1ee439bdefe3c91c76bfe672823c63fe120
 }
 
 #searchBar{
     padding: 10px;
-<<<<<<< HEAD
-    padding-left: 75%; 
-=======
     padding-left: 80%;
->>>>>>> bb5fe1ee439bdefe3c91c76bfe672823c63fe120
 }
 
 button:hover{

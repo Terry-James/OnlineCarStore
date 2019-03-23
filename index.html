@@ -14,9 +14,9 @@
 <body>
     <div id="mainBody">
         <div id="heading">
-          <div class="container">
-            <h1>Find a car <br>you can trust.</h1>
-            <h2>Just login get started.</h2>
+            <div class="container">
+                <h1>Find a car <br>you can trust.</h1>
+                <h2>Just login get started.</h2>
             </div>
         </div>
         <div class="row">
@@ -24,8 +24,9 @@
                 <div id="login">
                     <h2>Login</h2>
                     <form action="phpFiles/processing.php" method="POST">
-                        <input type="email" name="userEmail" placeholder="Email" required>
-                        <input type="password" name="userPassword" placeholder="Password" required>
+                        <input type="email" name="userEmail" placeholder="Email" >
+                        <input type="password" name="userPassword" placeholder="Password">
+                        <input type="hidden" name="hiddentData" value="LogIn">
                         <input type="submit" class="subButton">
                     </form>
                 </div>
@@ -34,10 +35,11 @@
                 <div id="registration">
                     <h2>Registration</h2>
                     <form action="phpFiles/processing.php" method="POST">
-                        <input type="text" name="firstName" placeholder="First Name" required>
-                        <input type="text" name="lastName" placeholder="Last Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="text" name="firstName" placeholder="First Name" >
+                        <input type="text" name="lastName" placeholder="Last Name" >
+                        <input type="email" name="email" placeholder="Email" >
+                        <input type="password" name="password" placeholder="Password">
+                        <input type="hidden" name="hiddentData" value="Registration">
                         <input type="submit" class="subButton">
                     </form>
                 </div>
@@ -45,4 +47,5 @@
         </div>
     </div>
 </body>
+
 </html>
