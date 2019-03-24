@@ -1,6 +1,6 @@
-window.onload = function(){
-    document.getElementById('logOut').onclick = returnHome;
-}
+$(document).ready(function(){
+    $("#logOut").click(returnHome);
+});
 
 function returnHome(){
     location = "index.html";
