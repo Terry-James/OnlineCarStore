@@ -29,7 +29,7 @@ nav {
     text-shadow: 2px 4px 4px #373F51;
     margin: 0;
     padding: 5%;
-    height: 500px;
+    height: 300px;
 }
 .container {
   width: 50%;
@@ -61,7 +61,11 @@ nav {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+}
 
+.column form{
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 

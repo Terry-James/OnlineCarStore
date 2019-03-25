@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="cssFiles/siteStyle.css">
-    <script src="javascript/siteScript.js"></script>
+    <script src="javascript/navScript.js"></script>
 </head>
 
 <body>
@@ -20,11 +20,10 @@
                 <h2>Just login get started.</h2>
             </div>
         </div>
-        <div class="row hidden">
             <div class="column">
                 <div id="login">
-                    <h2>Login</h2>
                     <form action="phpFiles/processing.php" method="POST">
+                        <h2>Login</h2>
                         <input type="email" name="userEmail" placeholder="Email" >
                         <input type="password" name="userPassword" placeholder="Password">
                         <input type="hidden" name="hiddentData" value="LogIn">
@@ -34,8 +33,8 @@
             </div>
             <div class="column">
                 <div id="registration">
-                    <h2>Register</h2>
                     <form action="phpFiles/processing.php" method="POST">
+                        <h2>Register</h2>
                         <input type="text" name="firstName" placeholder="First Name" >
                         <input type="text" name="lastName" placeholder="Last Name" >
                         <input type="email" name="email" placeholder="Email" >
@@ -45,8 +44,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </body>
-
 </html>
