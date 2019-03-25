@@ -1,19 +1,49 @@
-/* color codes are #373F51, #008DD5, #DFBBB1, #F56476, #E43F6F */
+/* https://colorhunt.co/palette/132595 */
 
 body{
-    background-color: #76dbd1;
+    background-color: #488b8f;
     margin: 0;
     padding: 0;
+    color: #f5fffe;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+}
+nav {
+  background-color: black;
+  padding: 4px 20px;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+#navigation {
+  margin: 0 20px;
+  text-decoration: none;
+  text-align: right;
+  list-style-type: none;
+}
+#navigation li {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+
+
+}
+#navLogin {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  color: #f5fffe;
+}
+#navLogin:hover {
+  color: green;
 }
 
 #heading{
     background: url("https://images.unsplash.com/photo-1505592225030-dad7a0531844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80") no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20pt;
-    color: #ecf4f3;
     text-shadow: 2px 4px 4px #373F51;
     margin: 0;
     padding: 5%;
@@ -31,17 +61,23 @@ body{
 
 #login input , #registration input{
     display: block;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 #login, #registration{
     text-align: left;
     padding: 25px;
-    font-family: "Source Sans Pro", Arial, serif;
 }
 
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+.row {
+  background: #5ea3a3;
+}
 .subButton{
     border-radius: 10px;
 }
@@ -51,7 +87,10 @@ body{
     display: inline-block;
     vertical-align: top;
 
-  }
+}
+.column:nth-of-type(2) {
+    border-left: 1px dashed black;
+}
 
 .mainNav ul{
     margin: 0;
