@@ -23,11 +23,11 @@ else{
     HandleRegisterationFunction($db, $email, $firstName, $lastName, $password);
 }
 
-function HandleRegisterationFunction($email, $firstName, $lastName, $password){
+function HandleRegisterationFunction($db,$email, $firstName, $lastName, $password){
     
     $addingUser = ("INSERT INTO customers(email,firstName,lastName,password) VALUES ('$email','$firstName','$lastName', '$password')");
     $addingQuery = mysqli_query($db, $addingUser);
-    header('Location:index.html');
+    header('Location:/OnlineCarStore/index.html');
 }
 
 
