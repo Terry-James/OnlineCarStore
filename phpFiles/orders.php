@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Store Front</title>
+    <title>Your Orders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../cssFiles/siteStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,8 +26,30 @@
     </div>
     <div class="">
       <h1>Your Orders</h1>
+      <table>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Car Type</th>
+          <th>Name </th>
+        </tr>
       <?php
+      $db_host = 'localhost';
+      $db_username = 'root';
+      $db_pass = '';
+      $db_name = 'carstore';
 
+      $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
+
+      $sqlSelect = ("SELECT * From transactions");
+      if($sqlQuery = mysqli_query($db, $sqlSelect)) {
+        while($row = $sqlQuery-> fetch_assoc()) {
+          echo "<tr><td>". $row["transID"]."</td><td>". $row["carSold"]."</td><td>". $row["customerBought"]."</td></tr>";
+        }
+        echo "</table>";
+      }
+      else {
+        echo "<h1>you have no transactions</h1>";
+      }
 
 
        ?>
