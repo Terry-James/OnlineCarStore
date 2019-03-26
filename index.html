@@ -35,10 +35,10 @@
                 <div id="registration">
                     <form action="phpFiles/processing.php" method="POST">
                         <h2>Register</h2>
-                        <input type="text" name="firstName" placeholder="First Name" >
-                        <input type="text" name="lastName" placeholder="Last Name" >
-                        <input type="email" name="email" placeholder="Email" >
-                        <input type="password" name="password" placeholder="Password">
+                        <input type="text" name="firstName" placeholder="First Name" required maxlength="25">
+                        <input type="text" name="lastName" placeholder="Last Name" required maxlength="25">
+                        <input type="email" name="email" placeholder="Email" required maxlength="25">
+                        <input type="password" name="password" placeholder="Password" required maxlength="10">
                         <input type="hidden" name="hiddentData" value="Registration">
                         <input type="submit" class="subButton">
                     </form>
