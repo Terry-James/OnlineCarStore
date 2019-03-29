@@ -79,7 +79,10 @@ nav {
 .mainNav button{
     border-radius: 5px;
     width: auto;
+    color: white;
     height: 25px;
+    background: #488b8f;
+    border-color: #488b8f;
 }
 
 .mainNav li{
@@ -96,7 +99,8 @@ nav {
 }
 
 button:hover{
-    background-color:#008DD5;
+    background-color:#5ea3a3;
+    border-color: #5ea3a3;
 }
 
 #sampleCars{
