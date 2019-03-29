@@ -7,7 +7,6 @@ $db_name = 'carstore';
 
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
-
 $HiddentInput = $_POST['hiddentData'];
 
 if ($HiddentInput=="LogIn"){
