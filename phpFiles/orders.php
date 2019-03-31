@@ -15,9 +15,9 @@
 <body>
     <div class="mainNav">
         <ul>
-            <li><button id="logOut">log-out</button></li>
-            <li><button id="viewCars"> View Cars </button></li>
-            <li><button id="viewOrders"> View Orders</button></li>
+            <li><button class="logOut">log-out</button></li>
+            <li><button class="viewCars"> View Cars </button></li>
+            <li><button class="viewOrders"> View Orders</button></li>
             <form id="searchBar">
                 <input type="text" placeholder="Search" name="search">
                 <button type="submit">Submit</button>

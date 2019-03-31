@@ -1,6 +1,7 @@
 $(document).ready(function(){
-    $("#logOut").click(returnHome);
-    $("#viewCars").click(carList);
+    $(".logOut").click(returnHome);
+    $(".viewCars").click(carList);
+    $(".viewOrders").click(orders);
 });
 
 function returnHome(){
@@ -9,4 +10,8 @@ function returnHome(){
 
 function carList(){
     
+}
+
+function orders(){
+    location = "phpFiles/orders.php"
 }

@@ -56,14 +56,14 @@ nav {
     border-radius: 10px;
 }
 
-.column {
+.column1 {
     width: 40%;
-    display: inline-block;
+    float: left;
     vertical-align: top;
     text-align: center;
 }
 
-.column form{
+.column1 form{
     margin-left: 25%;
     margin-right: 25%;
 }
