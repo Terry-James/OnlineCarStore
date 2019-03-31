@@ -103,9 +103,7 @@ button:hover{
     border-color: #5ea3a3;
 }
 
-#sampleCars{
-    margin: 25% 25% 25% 25%;
-}
+
 
 .row {
   text-align: center;
@@ -121,7 +119,7 @@ button:hover{
     float: left;
     width: 300px;
     margin-left: 8%;
-    margin-top: 20%;
+    margin-top: 2%;
 }
 
 #carSamples li{
@@ -130,3 +128,39 @@ button:hover{
     list-style-type: none;
 }
 
+#carSamples img{
+    width: 290px;
+    height: 300px;
+}
+
+#carsTable{
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+#allCars{
+    margin: 5% 10% 0% 10%;
+}
+
+.tRows{
+    padding: 20px;
+    width: 200px;
+    
+    border: 2px solid black;
+}
+
+table, th{
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 50%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

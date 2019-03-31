@@ -14,6 +14,7 @@ while($row = mysqli_fetch_assoc($sqlQuery)){
     $data[] = $row;
 }
 echo json_encode($data);
+
 /* while($carValues = mysqli_fetch_assoc($sqlQuery)){
     $data["make"] = $carValues["make"];
     $data["model"] = $carValues["model"];

@@ -28,7 +28,6 @@ $(document).ready(function(){
     ajax.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
-            console.log(data);
 
             for(let i = 0; i < data.length; i++){
                 $('#sampleImage1').attr("src",data[i].carImageID);
@@ -45,7 +44,7 @@ $(document).ready(function(){
                 $('#sampleMake3').text(data[i].make);
                 $('#sampleModel3').text(data[i].model);
                 $('#samplePrice3').text(data[i].price);
-                $('#sampleYear3').text(data[i].year);
+                $('#sampleYear3').text(data[i].year); 
             }
         } 
     }

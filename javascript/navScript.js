@@ -9,7 +9,7 @@ function returnHome(){
 }
 
 function carList(){
-    
+    location = "carShow.html";      
 }
 
 function orders(){
