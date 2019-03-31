@@ -110,3 +110,23 @@ button:hover{
 .row {
   text-align: center;
 }
+
+.sample{
+    padding: 20x;
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+.column{
+    float: left;
+    width: 300px;
+    margin-left: 8%;
+    margin-top: 20%;
+}
+
+#carSamples li{
+    padding-bottom: 20px;
+    padding-left: 10px;
+    list-style-type: none;
+}
+

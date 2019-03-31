@@ -6,14 +6,19 @@ $db_name = 'carstore';
 
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
-function getSample(){
+$data = array();
 
-    $sqlSelect = ("SELECT * From carInfo");
-    $sqlQuery = mysqli_query($db, $sqlSelect);
-    $carValues = mysqli_fetch_array($sqlQuery);
-
-    for($i = 0; $i < 5 ; $i++){
-        echo ($carValues['model'];)
-    }
+$sqlSelect = ("SELECT make, model, price, year From carInfo");
+$sqlQuery = mysqli_query($db, $sqlSelect);
+while($row = mysqli_fetch_assoc($sqlQuery)){
+    $data[] = $row;
 }
+echo json_encode($data);
+/* while($carValues = mysqli_fetch_assoc($sqlQuery)){
+    $data["make"] = $carValues["make"];
+    $data["model"] = $carValues["model"];
+    $data["price"] = $carValues["price"];
+    $data["year"] = $carValues["year"];
+}
+echo json_encode($data); */
 ?>
