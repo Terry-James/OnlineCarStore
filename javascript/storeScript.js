@@ -1,35 +1,20 @@
 $(document).ready(function(){
-  /*   var id;
-    $.ajax({
-        url: "phpFiles/getCarInfo.php",
-        type: "POST",
-        data: {id:id},
-        datatype: 'JSON',
-        success: function (data) {
-            for(let i = 0; i < data.length; i++){
-                $('#carMake').text(data[1]);
-                $('#carModel').text(data.model);
-                $('#carPrice').text(data.price);
-                $('#carYear').text(data.year);
-            } 
-        },
-        error: function () {
-            alert("not working");
-        }
-    }); */
+    $('#updating').hide();
+    $('#deleting').hide();
     var ajax = new XMLHttpRequest();
     var method = "GET";
     var url = "phpFiles/getCarInfo.php";
     var asynchronous = true;
 
     ajax.open(method, url, asynchronous);
+    ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     ajax.send();
 
     ajax.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
 
-            for(let i = 0; i < data.length; i++){
+            for(let i = 0; i < 3; i++){
                 $('#sampleImage1').attr("src",data[i].carImageID);
                 $('#sampleMake1').text(data[i].make);
                 $('#sampleModel1').text(data[i].model);

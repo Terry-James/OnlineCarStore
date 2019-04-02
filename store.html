@@ -10,14 +10,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="javascript/navScript.js"></script>
     <script src="javascript/storeScript.js"></script>
+    <script src="javascript/allCarScript.js"></script>
 </head>
 
 <body>
     <div class="mainNav">
         <ul>
             <li><button class="logOut">log-out</button></li>
+            <li><button class="home">Main Page</button></li>
             <li><button class="viewCars"> View Cars </button></li>
             <li><button class="viewOrders"> View Orders</button></li>
+            <li><button class="updateCar"> Update Car</button></li>
+            <li><button class="deleteCar"> Delete Car</button></li>
             <form id="searchBar">
                 <input type="text" placeholder="Search" name="search">
                 <button type="submit">Submit</button>
@@ -52,6 +56,29 @@
                 <li>Year: <span id="sampleYear3"></span></li>
             </ul>
         </div>
+    </div>
+    <div id="updating">
+        <form action="phpFiles/getCarInfo.php" method="POST">
+            <input type="text" name="userInput" placeholder="Enter car id">
+            <input type="submit" name="submit">
+        </form>
+    </div>
+    <div id="deleting">
+        <form action="phpFiles/getCarInfo.php" method="POST" class="add_update_delete">
+            <input type="text" name="userInput" placeholder="Enter car id">
+            <input type="submit" name="submit">
+        </form>
+        <table class="information">
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>ID</th>
+            </tr>
+            <tbody class="tableData"></tbody>
+        </table>
+
     </div>
 </body>
 
