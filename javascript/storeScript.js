@@ -7,7 +7,6 @@ $(document).ready(function(){
     var asynchronous = true;
 
     ajax.open(method, url, asynchronous);
-    ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     ajax.send();
 
     ajax.onreadystatechange = function(){

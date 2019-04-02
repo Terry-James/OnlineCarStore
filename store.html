@@ -59,13 +59,15 @@
     </div>
     <div id="updating">
         <form action="phpFiles/getCarInfo.php" method="POST">
-            <input type="text" name="userInput" placeholder="Enter car id">
+            <input type="text" name="deleteInput" placeholder="Enter car id">
+            <input type="hidden" name="hiddenValue" value="update">
             <input type="submit" name="submit">
         </form>
     </div>
     <div id="deleting">
         <form action="phpFiles/getCarInfo.php" method="POST" class="add_update_delete">
-            <input type="text" name="userInput" placeholder="Enter car id">
+            <input type="text" name="updateInput" placeholder="Enter car id">
+            <input type="hidden" name="hiddenValue" value="delete">
             <input type="submit" name="submit">
         </form>
         <table class="information">
