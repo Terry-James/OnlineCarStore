@@ -12,10 +12,11 @@ function returnHome(){
 }
 
 function carList(){
-    location = "carShow.html";      
+    location = "carShow.html";
 }
 
 function orders(){
+<<<<<<< HEAD
     location = "phpFiles/orders.php";
 }
 
@@ -31,4 +32,7 @@ function updateCars(){
 function deleteCars(){
     $('#carSamples').hide();
     $('#deleting').show()
+=======
+    location = "orders.html";
+>>>>>>> d833eb897158bdacb505003edd5d5b6d8aa217f0
 }
