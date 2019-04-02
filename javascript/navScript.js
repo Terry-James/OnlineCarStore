@@ -9,9 +9,9 @@ function returnHome(){
 }
 
 function carList(){
-    location = "carShow.html";      
+    location = "carShow.html";
 }
 
 function orders(){
-    location = "phpFiles/orders.php"
+    location = "orders.html";
 }
