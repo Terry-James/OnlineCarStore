@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['email'])){
+    header("Location: index.html"); // return to login if email is not set
+}
+
+
 // variables for database connection
 $db_host = 'localhost';
 $db_username = 'root';
@@ -38,6 +45,7 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
 
     if($customerInfo['email'] === $userEmail && $customerInfo['password'] === $userPassword){
         header('Location:/OnlineCarStore/store.html');
+        $_SESSION["email"] = $userEmail;
     }
     else{
         header('Location:/OnlineCarStore/index.html');
