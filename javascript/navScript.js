@@ -17,7 +17,7 @@ function carList(){
 }
 
 function orders(){
-    location = "phpFiles/orders.php";
+    location = "orders.html";
 }
 
 function mainFloor(){
