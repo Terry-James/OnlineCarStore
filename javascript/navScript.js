@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 function returnHome(){
-    location = "logOut.php";
+    location = "phpFiles/logOut.php";
 }
 
 function carList(){

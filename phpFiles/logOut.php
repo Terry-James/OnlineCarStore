@@ -6,5 +6,5 @@ session_unset();
 // destroy the session 
 session_destroy();
 
-header('Location: index.html'); // return to login page
+header('Location: /OnlineCarStore/index.html'); // return to login page
 ?>

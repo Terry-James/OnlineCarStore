@@ -11,7 +11,7 @@ body{
     background-image: url("../images/60-lines.png");
     margin: 0;
     padding: 0;
-    color: #f2fff3;
+    color: black;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 #heading{
@@ -122,6 +122,8 @@ body{
 }
 #allCars{
     margin: 5% 10% 0% 10%;
+    background: #1c5d99;
+    border-radius: 5px;
 }
 .tRows{
     padding: 20px;

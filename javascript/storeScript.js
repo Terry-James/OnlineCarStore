@@ -30,15 +30,6 @@ $(document).ready(function(){
                 $('#samplePrice3').text(data[i].price);
                 $('#sampleYear3').text(data[i].year); 
                 i++;
-                $('#sampleMake4').text(data[i].make);
-                $('#sampleModel4').text(data[i].model);
-                $('#samplePrice4').text(data[i].price);
-                $('#sampleYear4').text(data[i].year); 
-                i++;
-                $('#sampleMake5').text(data[i].make);
-                $('#sampleModel5').text(data[i].model);
-                $('#samplePrice5').text(data[i].price);
-                $('#sampleYear5').text(data[i].year); 
             }
         } 
     }
