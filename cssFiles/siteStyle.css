@@ -1,18 +1,19 @@
-/* #488b8f : Background Color
-  #5ea3a3 : Navigation Menu
-  #faf9f9 : Text Color
-  #add2c9 : Misc
- */
+/*
+body color:     background-color: #92dce5; background-image: url("../images/60-lines.png");
+nav color: #000000
+column/container color: #1c5d99
+nav button colors: #81d2c7;
+#text color: #f2fff3;
 
+*/
 body{
-    background-color: #488b8f;
+    background-color: #92dce5;
+    background-image: url("../images/60-lines.png");
     margin: 0;
     padding: 0;
-    color: #f5fffe;
+    color: #f2fff3;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
-
-
 #heading{
     background: url("https://images.unsplash.com/photo-1505592225030-dad7a0531844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80") no-repeat;
     background-size: cover;
@@ -28,19 +29,16 @@ body{
   width: 50%;
   margin-left: 5%;
 }
-
 #heading h1, #heading h2 {
   margin-top: 20px;
   padding: 0;
 }
-
 #login input , #registration input{
     display: block;
     padding: 8px;
     margin-bottom: 8px;
     border-radius: 0px 5px 5px 0px;
 }
-
 #login, #registration{
     text-align: left;
     padding: 25px;
@@ -48,108 +46,89 @@ body{
 .subButton{
     border-radius: 10px;
 }
-
 .column1 {
     width: 40%;
     float: left;
     vertical-align: top;
     text-align: center;
 }
-
 .column1 form{
     margin-left: 25%;
     margin-right: 25%;
 }
-
-
 .mainNav ul{
     margin: 0;
     padding: 0;
-    background-color: #373F51;
+    background-color: #000000;
     padding: 10px;
 }
-
 .mainNav button{
     border-radius: 5px;
     width: auto;
-    color: white;
+    color: #f2fff3;
     height: 25px;
-    background: #488b8f;
-    border-color: #488b8f;
+    background: #81d2c7;
+    border-color: #81d2c7;
 }
-
+.mainNav button:hover{
+    background-color:#5ea3a3;
+    border-color: #5ea3a3;
+}
 .mainNav li{
     list-style-type: none;
     float: left;
-    color: white;
+    color: #f2fff3;
     padding: 10px;
     margin-left: 10px;
 }
-
 #searchBar{
     padding: 10px;
     padding-left: 80%;
 }
-
-button:hover{
-    background-color:#5ea3a3;
-    border-color: #5ea3a3;
-}
-
-
-
 .row {
   text-align: center;
 }
-
 .sample {
     padding: 20px;
     margin: 0;
     text-align: left;
 }
-
-
 .column{
     max-width: 600px;
     padding-top: 5px;
+    margin-top: 5px;
     display: inline-block;
-    width: 30%;
-    background: #add2c9;
+    width: 18%;
+    background: #1c5d99;
+    border-radius: 5px;
 }
 #carSamples {
-
     margin: 10px auto;
     text-align: center;
 }
-
 #carSamples li{
     padding-bottom: 20px;
     padding-left: 10px;
     list-style-type: none;
 }
-
 #carSamples img{
     width: 90%;
     height: 300px;
     border: 1px solid black;
 }
-
 #carsTable{
     border: 2px solid black;
     border-radius: 2px;
 }
-
 #allCars{
     margin: 5% 10% 0% 10%;
 }
-
 .tRows{
     padding: 20px;
     width: 200px;
-    
+
     border: 2px solid black;
 }
-
 /* table, th{
     border-collapse: collapse;
     width: 50%;
@@ -157,14 +136,12 @@ button:hover{
     margin-left: auto;
     margin-right: auto;
 } */
-
 td{
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-
 .information{
     border-collapse: collapse;
     width: 100%;
@@ -173,19 +150,16 @@ td{
     margin-right: auto;
     margin-top: 2%;
 }
-
 .add_update_delete{
     margin-top: 2%;
     margin-bottom: 2%;
     float: right;
 }
-
 #addButton{
     margin-left: 52%;
     margin-top: 2%;
     border-radius: 5px;
 }
-
 .addInputs{
     display: block;
     margin-left: auto;
@@ -199,5 +173,3 @@ td{
 .orders table {
     margin: 0 auto;
 }
-
-
