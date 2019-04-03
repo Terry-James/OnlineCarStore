@@ -20,6 +20,7 @@
             <li><button class="home">Main Page</button></li>
             <li><button class="viewCars"> View Cars </button></li>
             <li><button class="viewOrders"> View Orders</button></li>
+            <li><button class="addCar"> Add Car </button></li>
             <li><button class="updateCar"> Update Car</button></li>
             <li><button class="deleteCar"> Delete Car</button></li>
             <form id="searchBar">
@@ -80,7 +81,16 @@
             </tr>
             <tbody class="tableData"></tbody>
         </table>
-
+    </div>
+    <div id="adding">
+        <form action="phpFiles/getCarInfo.php" method="POST">
+            <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
+            <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
+            <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>
+            <input type="text" class="addInputs" name="addYear" placeholder="Enter car year" required>
+            <input type="hidden" name="hiddenValue" value="adding">
+            <input type="submit" name="submit" id="addButton">
+        </form>
     </div>
 </body>
 

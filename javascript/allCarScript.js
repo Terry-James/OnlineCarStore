@@ -32,12 +32,3 @@ $(document).ready(function(){
         }
     }
 });
-
-function hideTags() {
-    $("#carsTable").hide();
-}
-
-function showResults() {
-    hideTags();
-
-}

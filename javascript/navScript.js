@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(".viewOrders").click(orders);
     $(".updateCar").click(updateCars);
     $(".deleteCar").click(deleteCars);
+    $(".addCar").click(addCars);
     $(".home").click(mainFloor);
 });
 
@@ -24,11 +25,16 @@ function mainFloor(){
 }
 
 function updateCars(){
-    $('#carSamples').hide();
+    hideElements();
     $('#updating').show();
 }
 
 function deleteCars(){
-    $('#carSamples').hide();
+    hideElements();
     $('#deleting').show()
+}
+
+function addCars(){
+    hideElements();
+    $('#adding').show();
 }

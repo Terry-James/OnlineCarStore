@@ -178,3 +178,20 @@ td{
     margin-bottom: 2%;
     float: right;
 }
+
+#addButton{
+    margin-left: 52%;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+
+.addInputs{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+
+
+

@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $('#updating').hide();
-    $('#deleting').hide();
+    hideElements();
+    $('#carSamples').show();
     var ajax = new XMLHttpRequest();
     var method = "GET";
     var url = "phpFiles/getCarInfo.php";
@@ -33,4 +33,11 @@ $(document).ready(function(){
         } 
     }
 });
+
+function hideElements(){
+    $('#updating').hide();
+    $('#deleting').hide();
+    $('#adding').hide();
+    $('#carSamples').hide();
+}
 
