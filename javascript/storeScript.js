@@ -13,23 +13,17 @@ $(document).ready(function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
 
-            for(let i = 0; i < 3; i++){
-                $('#sampleImage1').attr("src",data[i].carImageID);
-                $('#sampleMake1').text(data[i].make);
-                $('#sampleModel1').text(data[i].model);
-                $('#samplePrice1').text(data[i].price);
-                $('#sampleYear1').text(data[i].year);
-                i++;
-                $('#sampleMake2').text(data[i].make);
-                $('#sampleModel2').text(data[i].model);
-                $('#samplePrice2').text(data[i].price);
-                $('#sampleYear2').text(data[i].year);
-                i++;
-                $('#sampleMake3').text(data[i].make);
-                $('#sampleModel3').text(data[i].model);
-                $('#samplePrice3').text(data[i].price);
-                $('#sampleYear3').text(data[i].year); 
-                i++;
+            for(let i = 0; i < 5; i++){
+                var sampleImage = "#sampleImage"+ (i+1);
+                var sampleMake = "#sampleMake"+ (i+1);
+                var sampleModel = "#sampleModel"+ (i+1);
+                var samplePrice = "#samplePrice"+ (i+1);
+                var sampleYear = "#sampleYear"+ i;
+                $(sampleImage).attr("src",data[i].carImageID);
+                $(sampleMake).text(data[i].make);
+                $(sampleModel).text(data[i].model);
+                $(samplePrice).text(data[i].price);
+                $(sampleYear).text(data[i].year);
             }
         } 
     }
