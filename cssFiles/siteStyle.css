@@ -56,6 +56,7 @@ body{
     margin-left: 25%;
     margin-right: 25%;
 }
+
 .mainNav ul{
     margin: 0;
     padding: 0;
@@ -158,12 +159,13 @@ td{
     float: right;
 }
 #addButton{
-    margin-left: 52%;
+    margin-left: 65%;
     margin-top: 2%;
     border-radius: 5px;
 }
 .addInputs{
     display: block;
+    padding-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
@@ -175,3 +177,15 @@ td{
 .orders table {
     margin: 0 auto;
 }
+
+#adding{
+    max-width: 200px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #1c5d99;
+    border-radius: 5px;
+}
+
+

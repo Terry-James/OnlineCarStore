@@ -23,7 +23,7 @@ else if($hiddenValue == "update"){
     $updateSql = ("UPDATE carInfo () VALUE ()");
     $updateQuery = mysqli_query($db, $updateSql);
 }
-else{
+else{ // change to else if for adding
     $addMake = $_POST['addMake'];
     $addModel = $_POST['addModel'];
     $addPrice = $_POST['addPrice'];
@@ -32,4 +32,7 @@ else{
     $addSql = ("INSERT INTO carInfo (make, model, price, year) VALUES ($addMake, $addModel, $addPrice, $addYear)");
     $addQuery = mysqli_query($db, $addSql);
 }
+
+// add else for search function
+//TODO
 ?>
