@@ -18,9 +18,9 @@
             <li><button class="logOut">log-out</button></li>
             <li><button class="home">Main Page</button></li>
             <li><button class="viewOrders"> View Orders</button></li>
-            <form id="searchBar">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit" onclick="showResults()">Submit</button>
+            <form id="searchBar" action="searchResult.html">
+                <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
+                <button class="subSearch">Submit</button>
             </form>
         </ul>
     </div>
@@ -34,7 +34,7 @@
                 <th>ID</th>
             </tr>
             <tbody class="tableData"></tbody>
-           
+
         </table>
     </div>
 </body>

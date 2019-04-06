@@ -22,10 +22,9 @@
             <li><button class="addCar"> Add Car </button></li>
             <li><button class="updateCar"> Update Car</button></li>
             <li><button class="deleteCar"> Delete Car</button></li>
-            <form id="searchBar" method="POST" action="phpFiles/modify.php">
-                <input type="text" name="search" placeholder="Search by make or model">
-                <input type="hidden" name="hiddenData" value="search">
-                <input type="submit" name="submit">
+            <form id="searchBar" action="searchResult.html">
+                <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
+                <button class="subSearch">Submit</button>
             </form>
         </ul>
     </div>

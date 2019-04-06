@@ -13,7 +13,7 @@ $(document).ready(function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
 
-            for(let i = 0; i <= 5; i++){
+            for(let i = 0; i < 5; i++){
                 var sampleImage = "#sampleImage"+ (i+1);
                 var sampleMake = "#sampleMake"+ (i+1);
                 var sampleModel = "#sampleModel"+ (i+1);

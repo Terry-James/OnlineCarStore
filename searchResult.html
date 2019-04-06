@@ -1,5 +1,6 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="cssFiles/siteStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/navScript.js"></script>
+    <script src="javascript/search.js"></script>
 </head>
+
 <body>
-    
+    <div class="mainNav">
+        <ul>
+            <li><button class="logOut">log-out</button></li>
+            <li><button class="home">Main Page</button></li>
+            <li><button class="viewCars"> View Cars </button></li>
+            <li><button class="viewOrders"> View Orders</button></li>
+            <form id="searchBar" action="searchResult.html">
+                <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
+                <button class="subSearch">Submit</button>
+            </form>
+        </ul>
+    </div>
+    <div id="searchRes">
+        <table>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>ID</th>
+            </tr>
+            <tbody class="searchTable"></tbody>
+        </table>
+    </div>
 </body>
+
 </html>

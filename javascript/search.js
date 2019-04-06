@@ -1,15 +1,14 @@
-$(document).ready(function(){
-    var ajax = new XMLHttpRequest();
-    var method = "GET";
-    var url = "phpFiles/getCarInfo.php";
-    var asynchronous = true;
-
-    ajax.open(method, url, asynchronous);
-    ajax.send();
-
-    ajax.onreadystatechange = function () {
+$(document).ready(function () {
+    var result = localStorage.getItem("searchInput");
+    if (window.XMLHttpRequest) {
+        var xmlhttp = new XMLHttpRequest();
+    }
+    else {
+        var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText); // return data from php as a json
+            var data = JSON.parse(this.responseText);
 
             var html = "";
 
@@ -20,7 +19,6 @@ $(document).ready(function(){
                 var year = data[i].year;
                 var id = data[i].carID;
 
-                // build html table row
                 html += "<tr class=tRows>";
                 html += "<td>" + make + "</td>";
                 html += "<td>" + model + "</td>";
@@ -29,7 +27,9 @@ $(document).ready(function(){
                 html += "<td>" + id + "</td>";
                 html += "</tr>";
             }
-            $(".tableData").html(html); // insert to tbody tag
+            $(".searchTable").html(html);
         }
     }
+    xmlhttp.open("GET", "phpFiles/search.php?q=" + result, true);
+    xmlhttp.send();
 });

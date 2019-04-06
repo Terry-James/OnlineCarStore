@@ -6,7 +6,14 @@ $(document).ready(function(){
     $(".deleteCar").click(deleteCars);
     $(".addCar").click(addCars);
     $(".home").click(mainFloor);
+    $(".subSearch").click(search);
 });
+
+function search(){
+    result = $('.searchInput').val();
+    localStorage.setItem("searchInput", result);
+    location = "searchResult.html";
+}
 
 function returnHome(){
     location = "phpFiles/logOut.php";
