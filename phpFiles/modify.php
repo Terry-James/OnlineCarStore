@@ -9,7 +9,7 @@ $db_username = 'root';
 $db_pass = '';
 $db_name = 'carstore';
 
-$hiddenValue = $_POST['hiddenValue'];
+$hiddenValue = $_POST['hiddenData'];
 
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
@@ -23,7 +23,7 @@ else if($hiddenValue == "update"){
     $updateSql = ("UPDATE carInfo () VALUE ()");
     $updateQuery = mysqli_query($db, $updateSql);
 }
-else{ // change to else if for adding
+else if($hiddenValue == "adding"){ // change to else if for adding
     $addMake = $_POST['addMake'];
     $addModel = $_POST['addModel'];
     $addPrice = $_POST['addPrice'];
@@ -32,7 +32,14 @@ else{ // change to else if for adding
     $addSql = ("INSERT INTO carInfo (make, model, price, year) VALUES ($addMake, $addModel, $addPrice, $addYear)");
     $addQuery = mysqli_query($db, $addSql);
 }
-
-// add else for search function
-//TODO
+else{
+    $dataArray = array();
+    $userSearch = $_POST['search'];
+    $searchSql = ("SELECT * FROM carInfo WHERE make Like '%$userSearch%'");
+    $searchQuery = mysqli_query($db, $searchSql);
+    while($row = mysqli_fetch_assoc($searchQuery)){
+        $dataArray[] = $row;
+    }
+    print_r($dataArray);
+}
 ?>

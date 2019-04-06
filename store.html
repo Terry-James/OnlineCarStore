@@ -22,9 +22,10 @@
             <li><button class="addCar"> Add Car </button></li>
             <li><button class="updateCar"> Update Car</button></li>
             <li><button class="deleteCar"> Delete Car</button></li>
-            <form id="searchBar">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit">Submit</button>
+            <form id="searchBar" method="POST" action="phpFiles/modify.php">
+                <input type="text" name="search" placeholder="Search by make or model">
+                <input type="hidden" name="hiddenData" value="search">
+                <input type="submit" name="submit">
             </form>
         </ul>
     </div>
@@ -78,14 +79,14 @@
     <div id="updating">
         <form action="phpFiles/modify.php" method="POST">
             <input type="text" name="updateInput" placeholder="Enter car id">
-            <input type="hidden" name="hiddenValue" value="update">
+            <input type="hidden" name="hiddenData" value="update">
             <input type="submit" name="submit">
         </form>
     </div>
     <div id="deleting">
         <form action="phpFiles/modify.php" method="POST" class="add_update_delete">
             <input type="text" name="deleteInput" placeholder="Enter car id">
-            <input type="hidden" name="hiddenValue" value="delete">
+            <input type="hidden" name="hiddenData" value="delete">
             <input type="submit" name="submit">
         </form>
         <table class="information">
@@ -106,7 +107,7 @@
             <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
             <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>
             <input type="text" class="addInputs" name="addYear" placeholder="Enter car year" required>
-            <input type="hidden" name="hiddenValue" value="adding">
+            <input type="hidden" name="hiddenData" value="adding">
             <input type="submit" name="submit" id="addButton">
         </form>
     </div>
