@@ -61,7 +61,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #000000;
-   
+
 }
 .mainNav button{
     border-radius: 5px;
@@ -94,11 +94,16 @@ body{
     margin: 0;
     text-align: left;
 }
+.buycar {
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
 .column{
     max-width: 600px;
     padding-top: 5px;
     margin-top: 5px;
     display: inline-block;
+    text-align: left;
     width: 18%;
     background: #1c5d99;
     border-radius: 5px;
@@ -113,6 +118,8 @@ body{
     list-style-type: none;
 }
 #carSamples img{
+  display: block;
+    margin: 0 auto;
     width: 90%;
     height: 300px;
     border: 1px solid black;
@@ -187,5 +194,3 @@ td{
     background: #1c5d99;
     border-radius: 5px;
 }
-
-

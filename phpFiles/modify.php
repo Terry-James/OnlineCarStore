@@ -30,10 +30,9 @@ else{ // used to add a car to the database
     $addMake = $_POST['addMake'];
     $addModel = $_POST['addModel'];
     $addPrice = $_POST['addPrice'];
-    $addYear = $_POST['addYear']; 
+    $addYear = $_POST['addYear'];
 
-    $addSql = ("INSERT INTO carInfo (make, model, price, year) 
-                VALUES ($addMake, $addModel, $addPrice, $addYear)");
+    $addSql = ("INSERT INTO carInfo(make,model,price,year) VALUES ('$addMake','$addModel','$addPrice','$addYear')");
     $addQuery = mysqli_query($db, $addSql);
 }
 ?>

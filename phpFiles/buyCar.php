@@ -14,9 +14,9 @@ $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't conne
 
 // create an array to hold json data
 $data = array();
-
+$emailSearch = $_SESSION['email'];
 // query statement for database lookup
-$sqlSelect = ("SELECT make, model, price, year, carID From carInfo");
+$sqlSelect = ("SELECT customerID From customers where email='$emailSearch'");
 $sqlQuery = mysqli_query($db, $sqlSelect); // Make the query base on type of statement
 while ($row = mysqli_fetch_assoc($sqlQuery)) { // while there are rows keep adding them to data variable
     $data[] = $row;

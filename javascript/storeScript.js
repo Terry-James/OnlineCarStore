@@ -25,7 +25,7 @@ $(document).ready(function(){
                 $(samplePrice).text(data[i].price);
                 $(sampleYear).text(data[i].year);
             }
-        } 
+        }
     }
 });
 
@@ -35,4 +35,3 @@ function hideElements(){
     $('#adding').hide();
     $('#carSamples').hide();
 }
-
