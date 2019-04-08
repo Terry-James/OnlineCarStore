@@ -11,12 +11,12 @@ $(document).ready(function(){
         if(this.readyState == 4 && this.status == 200){
 
             var data = JSON.parse(this.responseText);
-
-            for(let i = 0; i < data.length; i++){
+            var name = data[1] + " " + data[2];
+            for(let i = 3; i < data.length; i+=3){
                 var tableRow = $("<tr></tr>");
-                var tableOne = $('<td></td>').text(data[i].transID);
-                var tableTwo = $('<td></td>').text(data[i].carID);
-                var tableThree = $('<td></td>').text(data[i].customerBought);
+                var tableOne = $('<td></td>').text(data[i]);
+                var tableTwo = $('<td></td>').text((data[i+1]+" " + data[i+2]));
+                var tableThree = $('<td></td>').text(name);
                 tableRow.append(tableOne);
                 tableRow.append(tableTwo);
                 tableRow.append(tableThree);
