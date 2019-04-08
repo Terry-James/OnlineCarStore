@@ -27,7 +27,7 @@ $(document).ready(function(){
                 html += "<td>" + price + "</td>";
                 html += "<td>" + year + "</td>";
                 html += "<td>" + id + "</td>";
-                html += "<td><form action='phpFiles/buyCar.php' method='POST'><input type='hidden' name='hiddenID' value=" + id + "><input type='submit' name='buy' value='buy'></form>";
+                html += "<td><form action='phpFiles/buyCar.php' method='POST'><input type='hidden' name='hiddenName' value='5'><input type='hidden' name='hiddenID' value=" + id + "><input type='submit' name='buy' value='buy'></form>";
                 html += "</tr>";
             }
             $(".tableData").html(html); // insert to tbody tag

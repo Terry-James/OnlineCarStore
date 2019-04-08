@@ -13,14 +13,17 @@ $db_name = 'carstore';
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
 // create an array to hold json data
-$data = array();
+$customerID = "";
 $emailSearch = $_SESSION['email'];
-// query statement for database lookup
 $sqlSelect = ("SELECT customerID From customers where email='$emailSearch'");
 $sqlQuery = mysqli_query($db, $sqlSelect); // Make the query base on type of statement
-while ($row = mysqli_fetch_assoc($sqlQuery)) { // while there are rows keep adding them to data variable
-    $data[] = $row;
-}
-echo json_encode($data); // encode data as json to be used by ajax call
+$customerID = mysqli_fetch_assoc($sqlQuery)["customerID"]; //get The Customers ID
+$idforcar = $_POST['hiddenID'];
+$customerID = (int)$customerID;
+// query statement for database lookup
+
+$addSql = ("INSERT INTO transactions(carID,customerBought) VALUES ('$idforcar','$customerID')"); //searches for bought car
+$addQuery = mysqli_query($db, $addSql);
+$removSql = ("DELETE FROM carinfo WHERE carID='$idforcar'"); //deletes bought car
 
 ?>
