@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ // loads all navigation buttons
     $(".logOut").click(returnHome);
     $(".viewCars").click(carList);
     $(".viewOrders").click(orders);
@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 function search(){
     result = $('.searchInput').val();
-    localStorage.setItem("searchInput", result);
+    localStorage.setItem("searchInput", result); // save the input into javascript local storage
     location = "searchResult.html";
 }
 
@@ -38,7 +38,7 @@ function updateCars(){
 
 function deleteCars(){
     hideElements();
-    $('#deleting').show()
+    $('#deleting').show();
 }
 
 function addCars(){
