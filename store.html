@@ -76,8 +76,13 @@
         </div>
     </div>
     <div id="updating">
+      <h2>Fill out the Car ID and what you want to update.</h2>
         <form action="phpFiles/modify.php" method="POST">
             <input type="text" name="updateInput" placeholder="Enter car id">
+            <input type="text" name="updateMake" placeholder="Enter new car make">
+            <input type="text" name="updateModel" placeholder="Enter new car model">
+            <input type="text" name="updatePrice" placeholder="Enter new car price">
+            <input type="text" name="updateYear" placeholder="Enter new car year">
             <input type="hidden" name="hiddenData" value="update">
             <input type="submit" name="submit">
         </form>
