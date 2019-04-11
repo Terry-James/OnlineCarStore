@@ -24,6 +24,6 @@ $customerID = (int)$customerID;
 
 $addSql = ("INSERT INTO transactions(carID,customerBought) VALUES ('$idforcar','$customerID')"); //searches for bought car
 $addQuery = mysqli_query($db, $addSql);
-$removSql = ("DELETE FROM carinfo WHERE carID='$idforcar'"); //deletes bought car
+
 
 ?>

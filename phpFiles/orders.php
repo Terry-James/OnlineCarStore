@@ -14,17 +14,14 @@
     $emailSearch = $_SESSION['email'];
     $sqlfindcust = ("SELECT firstName, lastName, customerID From customers where email='$emailSearch'");
     $sqlfindcustquery = mysqli_query($db, $sqlfindcust); // Make the query base on type of statement
-    $customerArray = array();
+
+    $customerArray = array(); //Array to get customer information
     $customerArray[] = mysqli_fetch_assoc($sqlfindcustquery); //get The Customers ID
-    $customerID = $customerArray[0]['customerID'];
+    $customerID = $customerArray[0]['customerID']; //Needed for sqlselect to make it easier
 
     $data = array(); //array to store data to display on page
-    $data[] = $customerID;
-    $data[] = $customerArray[0]['firstName'];
-    $data[] = $customerArray[0]['lastName'];
 
-
-    $sqlSelect = ("SELECT transID, carID, customerBought From transactions where customerBought='$customerID'");
+    $sqlSelect = ("SELECT * From transactions where customerID='$customerID'");
     $sqlQuery = mysqli_query($db, $sqlSelect);
     while ($row = mysqli_fetch_assoc($sqlQuery)) {
 
@@ -36,6 +33,8 @@
         $carArray[] = mysqli_fetch_assoc($sqlfindcustcar); //get The car make and model
         $data[] = $carArray[0]['make'];
         $data[] = $carArray[0]['model'];
+        $data[] = $row['quantity'];
+        $data[] = $row['TansDate'];
     }
     echo json_encode($data);
     ?>
