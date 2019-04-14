@@ -19,12 +19,6 @@
             <li><button class="home">Main Page</button></li>
             <li><button class="viewCars"> View Cars </button></li>
             <li><button class="viewOrders"> View Orders</button></li>
-            <li><button class="addCar"> Add Car </button></li>
-            <li><button class="updateCar"> Update Car</button></li>
-            <li><button class="deleteCar"> Delete Car</button></li>
-            <form  action="phpFiles/orders.php" method="POST">
-                <input type="submit">
-            </form>
             <form id="searchBar" action="searchResult.html">
                 <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
                 <button class="subSearch">Submit</button>
@@ -77,46 +71,6 @@
                 <li>Year: <span id="sampleYear5"></span></li>
             </ul>
         </div>
-    </div>
-    <div id="updating">
-      <h2>Fill out the Car ID and what you want to update.</h2>
-        <form action="phpFiles/modify.php" method="POST">
-            <input type="text" name="updateInput" placeholder="Enter car id">
-            <input type="text" name="updateMake" placeholder="Enter new car make">
-            <input type="text" name="updateModel" placeholder="Enter new car model">
-            <input type="text" name="updatePrice" placeholder="Enter new car price">
-            <input type="text" name="updateYear" placeholder="Enter new car year">
-            <input type="hidden" name="hiddenData" value="update">
-            <input type="submit" name="submit">
-        </form>
-    </div>
-    <div id="deleting">
-        <form action="phpFiles/modify.php" method="POST" class="add_update_delete">
-            <input type="text" name="deleteInput" placeholder="Enter car id">
-            <input type="hidden" name="hiddenData" value="delete">
-            <input type="submit" name="submit">
-        </form>
-        <table class="information">
-            <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>Year</th>
-                <th>ID</th>
-            </tr>
-            <tbody class="tableData"></tbody>
-        </table>
-    </div>
-    <div id="adding">
-        <form action="phpFiles/modify.php" method="POST">
-            All fields are required:
-            <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
-            <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
-            <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>
-            <input type="text" class="addInputs" name="addYear" placeholder="Enter car year" required>
-            <input type="hidden" name="hiddenData" value="adding">
-            <input type="submit" name="submit" id="addButton">
-        </form>
     </div>
 </body>
 

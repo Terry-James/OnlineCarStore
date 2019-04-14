@@ -59,4 +59,5 @@ else{ // used to add a car to the database
     $addSql = ("INSERT INTO carInfo(make,model,price,year) VALUES ('$addMake','$addModel','$addPrice','$addYear')");
     $addQuery = mysqli_query($db, $addSql);
 }
+header("Location: ../modifydatabase.php"); 
 ?>
