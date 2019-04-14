@@ -1,41 +1,39 @@
   <?php
-    session_start();
-    if (!isset($_SESSION['email'])) {
-        header("Location: index.html"); // return to login if email is not set
-    }
+  
+  session_start();
+  if (!isset($_SESSION['email'])) {
+    header("Location: index.html"); // return to login if email is not set
+  }
+  
+  $db_host = 'localhost';
+  $db_username = 'root';
+  $db_pass = '';
+  $db_name = 'carstore';
 
-    $db_host = 'localhost';
-    $db_username = 'root';
-    $db_pass = '';
-    $db_name = 'carstore';
+  $emailSearch = $_SESSION['email'];
 
-    $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
+  $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
-    $emailSearch = $_SESSION['email'];
-    $sqlfindcust = ("SELECT firstName, lastName, customerID From customers where email='$emailSearch'");
-    $sqlfindcustquery = mysqli_query($db, $sqlfindcust); // Make the query base on type of statement
-    $customerArray = array();
-    $customerArray[] = mysqli_fetch_assoc($sqlfindcustquery); //get The Customers ID
-    $customerID = $customerArray[0]['customerID'];
+  $dataArray = array();
 
-    $data = array(); //array to store data to display on page
-    $data[] = $customerID;
-    $data[] = $customerArray[0]['firstName'];
-    $data[] = $customerArray[0]['lastName'];
+  $sqlfindcust = ("SELECT customerID FROM customers WHERE email='$emailSearch'");
+  $sqlfindcustquery = mysqli_query($db, $sqlfindcust); // Make the query base on type of statement
+  $customerID = mysqli_fetch_assoc($sqlfindcustquery); //get The Customers ID
+  $custID = $customerID['customerID'];
+  
 
+  $carIdSql = ("SELECT carID FROM transactions WHERE transactions.CustomerID = $custID ");
+  $carIdQuery = mysqli_query($db, $carIdSql);
+  $carID = mysqli_fetch_assoc($carIdQuery);
+  $cID = $carID['carID'];
 
-    $sqlSelect = ("SELECT transID, carID, customerBought From transactions where customerBought='$customerID'");
-    $sqlQuery = mysqli_query($db, $sqlSelect);
-    while ($row = mysqli_fetch_assoc($sqlQuery)) {
+  $infoSql = ("SELECT * FROM carinfo, customers WHERE carinfo.carID = $cID AND customers.customerID = $custID");
+  echo($infoSql);
+  $infoQuery = mysqli_query($db, $infoSql);
+  
+  while ($row = mysqli_fetch_assoc($infoQuery)) {
+    $dataArray[] = $row;
+  }
+  echo json_encode($dataArray);
 
-        $data[] = $row['transID'];
-        $carMake = $row['carID'];
-        $sqlfindcar = ("SELECT make, model From carinfo where carID='$carMake'");
-        $sqlfindcustcar = mysqli_query($db, $sqlfindcar); // Make the query base on type of statement
-        $carArray = array();
-        $carArray[] = mysqli_fetch_assoc($sqlfindcustcar); //get The car make and model
-        $data[] = $carArray[0]['make'];
-        $data[] = $carArray[0]['model'];
-    }
-    echo json_encode($data);
-    ?>
+  ?>

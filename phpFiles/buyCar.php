@@ -9,21 +9,19 @@ $db_username = 'root';
 $db_pass = '';
 $db_name = 'carstore';
 
+$emailSearch = $_SESSION['email'];
+$carID = $_POST['hiddenID'];
+
 // connect to the database also handles error message
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
-// create an array to hold json data
-$customerID = "";
-$emailSearch = $_SESSION['email'];
 $sqlSelect = ("SELECT customerID From customers where email='$emailSearch'");
 $sqlQuery = mysqli_query($db, $sqlSelect); // Make the query base on type of statement
 $customerID = mysqli_fetch_assoc($sqlQuery)["customerID"]; //get The Customers ID
-$idforcar = $_POST['hiddenID'];
 $customerID = (int)$customerID;
-// query statement for database lookup
 
-$addSql = ("INSERT INTO transactions(carID,customerBought) VALUES ('$idforcar','$customerID')"); //searches for bought car
-$addQuery = mysqli_query($db, $addSql);
-$removSql = ("DELETE FROM carinfo WHERE carID='$idforcar'"); //deletes bought car
+$carInsert = ("INSERT INTO transactions (carID, quantity, CustomerID) VALUES ($carID, 1, $customerID)");
+$insertQuery = mysqli_query($db, $carInsert);
 
+header('Location: ../OnLineCarstore/index.html');
 ?>

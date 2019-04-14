@@ -11,17 +11,28 @@ $(document).ready(function(){
         if(this.readyState == 4 && this.status == 200){
 
             var data = JSON.parse(this.responseText);
-            var name = data[1] + " " + data[2];
-            for(let i = 3; i < data.length; i+=3){
-                var tableRow = $("<tr></tr>");
-                var tableOne = $('<td></td>').text(data[i]);
-                var tableTwo = $('<td></td>').text((data[i+1]+" " + data[i+2]));
-                var tableThree = $('<td></td>').text(name);
-                tableRow.append(tableOne);
-                tableRow.append(tableTwo);
-                tableRow.append(tableThree);
-                $("table").append(tableRow);
+            var html = "";
+
+            for (let i = 0; i < data.length; i++) {
+                var make = data[i].make;
+                var model = data[i].model;
+                var price = data[i].price;
+                var year = data[i].year;
+                var id = data[i].carID;
+
+                // build html table row
+                html += "<tr class=tRows>";
+                html += "<td>" + make + "</td>";
+                html += "<td>" + model + "</td>";
+                html += "<td>" + price + "</td>";
+                html += "<td>" + year + "</td>";
+                html += "<td>" + id + "</td>";
+                html += "<td><form action='phpFiles/buyCar.php' method='POST'>" +
+                            "<input type='hidden' name='hiddenID' value=" + id + ">" +
+                            "<input type='submit' name='buy' value='buy' id=buyButton></form></td>";
+                html += "</tr>";
             }
+            $(".tableData").html(html); // insert to tbody tag
         }
     }
 });
