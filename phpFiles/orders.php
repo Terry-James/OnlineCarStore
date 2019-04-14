@@ -14,6 +14,7 @@
 
   $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
+<<<<<<< HEAD
   $dataArray = array();
 
   $sqlfindcust = ("SELECT customerID FROM customers WHERE email='$emailSearch'");
@@ -37,3 +38,32 @@
   echo json_encode($dataArray);
 
   ?>
+=======
+    $emailSearch = $_SESSION['email'];
+    $sqlfindcust = ("SELECT firstName, lastName, customerID From customers where email='$emailSearch'");
+    $sqlfindcustquery = mysqli_query($db, $sqlfindcust); // Make the query base on type of statement
+
+    $customerArray = array(); //Array to get customer information
+    $customerArray[] = mysqli_fetch_assoc($sqlfindcustquery); //get The Customers ID
+    $customerID = $customerArray[0]['customerID']; //Needed for sqlselect to make it easier
+
+    $data = array(); //array to store data to display on page
+
+    $sqlSelect = ("SELECT * From transactions where customerID='$customerID'");
+    $sqlQuery = mysqli_query($db, $sqlSelect);
+    while ($row = mysqli_fetch_assoc($sqlQuery)) {
+
+        $data[] = $row['transID'];
+        $carMake = $row['carID'];
+        $sqlfindcar = ("SELECT make, model From carinfo where carID='$carMake'");
+        $sqlfindcustcar = mysqli_query($db, $sqlfindcar); // Make the query base on type of statement
+        $carArray = array();
+        $carArray[] = mysqli_fetch_assoc($sqlfindcustcar); //get The car make and model
+        $data[] = $carArray[0]['make'];
+        $data[] = $carArray[0]['model'];
+        $data[] = $row['quantity'];
+        $data[] = $row['TansDate'];
+    }
+    echo json_encode($data);
+    ?>
+>>>>>>> cf14177c6110c345ec721d619d834a92cd8d56ef

@@ -23,8 +23,32 @@ if($hiddenValue == "delete"){  // used to delete a car from a database
 }
 else if($hiddenValue == "update"){ // used to update information about a car in database
     $updateValue = $_POST['updateInput'];
-    $updateSql = ("UPDATE carInfo () VALUE ()");
-    $updateQuery = mysqli_query($db, $updateSql);
+    $updateMake = $_POST['updateMake'];
+    $updateModel = $_POST['updateModel'];
+    $updatePrice = $_POST['updatePrice'];
+    $updateYear = $_POST['updateYear'];
+    if(strcmp($updateValue, '') != 0) {
+      $updateValue = (int) $updateValue;
+      if(strcmp($updateMake, '') != 0) {
+        $updateMakeDb = ("UPDATE carInfo SET make= '$updateMake' WHERE carID = $updateValue");
+        $updateMakeQuery = mysqli_query($db, $updateMakeDb);
+      }
+      if(strcmp($updateModel, '') != 0) {
+        $updateModelDb = ("UPDATE carInfo SET model= '$updateModel' WHERE carID = $updateValue");
+        $updateModelQuery = mysqli_query($db, $updateModelDb);
+      }
+      if(strcmp($updatePrice, '') != 0) {
+        $updatePriceDb = ("UPDATE carInfo SET price= '$updatePrice' WHERE carID = $updateValue");
+        $updateMakeQuery = mysqli_query($db, $updatePriceDb);
+      }
+      if(strcmp($updateYear, '') != 0) {
+        $updateYearDb = ("UPDATE carInfo SET year= '$updateYear' WHERE carID = $updateValue");
+        $updateYearQuery = mysqli_query($db, $updateYearDb);
+      }
+
+    }
+
+
 }
 else{ // used to add a car to the database
     $addMake = $_POST['addMake'];
