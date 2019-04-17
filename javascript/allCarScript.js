@@ -12,8 +12,8 @@ $(document).ready(function(){
             var data = JSON.parse(this.responseText); // return data from php as a json
 
             var html = "";
-
             for (let i = 0; i < data.length; i++) {
+                //var image = images[i].attr("src", data[i].carImageID);
                 var make = data[i].make;
                 var model = data[i].model;
                 var price = data[i].price;

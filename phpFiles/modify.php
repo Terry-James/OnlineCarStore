@@ -8,7 +8,7 @@ if(!isset($_SESSION['email'])){
 $db_host = 'localhost';
 $db_username = 'root';
 $db_pass = '';
-$db_name = 'carstore';
+$db_name = 'carstoredata';
 
 // used to identify which form is being submitted.
 $hiddenValue = $_POST['hiddenData'];
@@ -45,10 +45,7 @@ else if($hiddenValue == "update"){ // used to update information about a car in 
         $updateYearDb = ("UPDATE carInfo SET year= '$updateYear' WHERE carID = $updateValue");
         $updateYearQuery = mysqli_query($db, $updateYearDb);
       }
-
     }
-
-
 }
 else{ // used to add a car to the database
     $addMake = $_POST['addMake'];

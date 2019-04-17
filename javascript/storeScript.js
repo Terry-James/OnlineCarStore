@@ -13,8 +13,9 @@ $(document).ready(function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
 
+            var images = $(".sampleImage");
             for(let i = 0; i < 5; i++){
-                var sampleImage = "#sampleImage"+ (i+1);
+                var sampleImage = images[i];
                 var sampleMake = "#sampleMake"+ (i+1);
                 var sampleModel = "#sampleModel"+ (i+1);
                 var samplePrice = "#samplePrice"+ (i+1);

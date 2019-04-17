@@ -7,7 +7,7 @@ if(!isset($_SESSION['email'])){
 $db_host = 'localhost';
 $db_username = 'root';
 $db_pass = '';
-$db_name = 'carstore';
+$db_name = 'carstoredata';
 
 // connect to the database also handles error message
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
@@ -16,7 +16,7 @@ $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't conne
 $data = array();
 
 // query statement for database lookup
-$sqlSelect = ("SELECT make, model, price, year, carID From carInfo");
+$sqlSelect = ("SELECT carImageID, make, model, price, year, carID From carInfo");
 $sqlQuery = mysqli_query($db, $sqlSelect); // Make the query base on type of statement
 while ($row = mysqli_fetch_assoc($sqlQuery)) { // while there are rows keep adding them to data variable
     $data[] = $row;
