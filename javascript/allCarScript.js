@@ -33,5 +33,4 @@ $(document).ready(function(){
             $(".tableData").html(html); // insert to tbody tag
         }
     }
-
 });

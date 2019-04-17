@@ -20,13 +20,8 @@ $sqlQuery = mysqli_query($db, $sqlSelect); // Make the query base on type of sta
 $customerID = mysqli_fetch_assoc($sqlQuery)["customerID"]; //get The Customers ID
 $customerID = (int)$customerID;
 
-echo($customerID);
-echo($carID);
-
 $carInsert = ("INSERT INTO transactions (carID, quantity, CustomerID) VALUES ($carID, 1, $customerID)");
-echo($carInsert);
 $insertQuery = mysqli_query($db, $carInsert);
 
-
-#header('Location: /OnlineCarStore/store.html');
+header('Location:/OnlineCarStore/store.html');
 ?>
