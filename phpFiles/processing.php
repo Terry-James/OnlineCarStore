@@ -24,12 +24,13 @@ else{
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $password = $_POST['password'];
-    HandleRegisterationFunction($db, $email, $firstName, $lastName, $password);
+    $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+    HandleRegisterationFunction($db, $email, $firstName, $lastName, $hashPassword);
 }
 
-function HandleRegisterationFunction($db,$email, $firstName, $lastName, $password){
+function HandleRegisterationFunction($db,$email, $firstName, $lastName, $hashPassword){
     
-    $addingUser = ("INSERT INTO customers(email,firstName,lastName,password) VALUES ('$email','$firstName','$lastName', '$password')");
+    $addingUser = ("INSERT INTO customers(email,firstName,lastName,password) VALUES ('$email','$firstName','$lastName', '$hashPassword')");
     $addingQuery = mysqli_query($db, $addingUser);
     header('Location:/OnlineCarStore/index.html');
 }
@@ -41,7 +42,7 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
     $getInfoQuery = mysqli_query($db, $getCustomerInfo);
     $customerInfo = mysqli_fetch_array($getInfoQuery);
 
-    if($customerInfo['email'] === $userEmail && $customerInfo['password'] === $userPassword){
+    if(password_verify($userPassword, $customerInfo['password'])){
         header('Location:/OnlineCarStore/store.html');
         $_SESSION["email"] = $userEmail;
     }
