@@ -14,19 +14,20 @@ $(document).ready(function () {
             var html = "";
 
             for (let i = 0; i < data.length; i++) {
-                var make = data[i].make;
-                var model = data[i].model;
-                var price = data[i].price;
+                var transID = data[i].transID;
+                var make = data[i].make + " " + data[i].model;
                 var year = data[i].year;
-                var id = data[i].carID;
+                var quantity = data[i].quantity;
+                var date = data[i].TansDate;
+
 
                 // build html table row
                 html += "<tr class=tRows>";
+                html += "<td>" + transID + "</td>";
                 html += "<td>" + make + "</td>";
-                html += "<td>" + model + "</td>";
-                html += "<td>" + price + "</td>";
                 html += "<td>" + year + "</td>";
-                html += "<td>" + id + "</td>";
+                html += "<td>" + quantity + "</td>";
+                html += "<td>" + date + "</td>";
                 html += "</tr>";
                 $("#infoTable").html(html); // insert to tbody tag
             }
