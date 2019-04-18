@@ -18,7 +18,7 @@ if ($HiddentInput=="LogIn"){
     $userEmail = $_POST['userEmail'];
     $userPassword = $_POST['userPassword'];
     HandleLogInFunction($db, $userEmail, $userPassword);
-}  
+}
 else{
     $email = $_POST['email'];
     $firstName = $_POST['firstName'];
@@ -29,7 +29,7 @@ else{
 }
 
 function HandleRegisterationFunction($db,$email, $firstName, $lastName, $hashPassword){
-    
+
     $addingUser = ("INSERT INTO customers(email,firstName,lastName,password) VALUES ('$email','$firstName','$lastName', '$hashPassword')");
     $addingQuery = mysqli_query($db, $addingUser);
     header('Location:/OnlineCarStore/index.html');
@@ -37,7 +37,7 @@ function HandleRegisterationFunction($db,$email, $firstName, $lastName, $hashPas
 
 
 function HandleLogInFunction($db, $userEmail, $userPassword){
-    
+
     $getCustomerInfo = ("SELECT email, password From customers  Where email = '$userEmail'");
     $getInfoQuery = mysqli_query($db, $getCustomerInfo);
     $customerInfo = mysqli_fetch_array($getInfoQuery);
@@ -50,3 +50,5 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
         header('Location:/OnlineCarStore/index.html');
     }
 }
+mysqli_close($db);
+?>

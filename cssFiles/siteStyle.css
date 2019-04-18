@@ -184,6 +184,9 @@ td{
 .orders table {
     margin: 0 auto;
 }
+.orders table td, .orders table th{
+  padding: 10px;
+}
 
 #adding{
     max-width: 200px;
