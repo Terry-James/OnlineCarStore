@@ -26,7 +26,6 @@ $(document).ready(function () {
                 html += "<td>" + transID + "</td>";
                 html += "<td>" + make + "</td>";
                 html += "<td>" + year + "</td>";
-                html += "<td>" + quantity + "</td>";
                 html += "<td>" + date + "</td>";
                 html += "</tr>";
                 $("#infoTable").html(html); // insert to tbody tag

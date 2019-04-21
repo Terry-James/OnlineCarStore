@@ -19,5 +19,5 @@ while($row = mysqli_fetch_assoc($searchQuery)){
     $dataArray[] = $row;
 }
 echo json_encode($dataArray);
-
+mysqli_close($db);
 ?>

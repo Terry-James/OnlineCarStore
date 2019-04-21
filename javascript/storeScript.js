@@ -14,17 +14,23 @@ $(document).ready(function(){
             var data = JSON.parse(this.responseText);
 
             var images = $(".sampleImage");
+            var randSample = [];
             for(let i = 0; i < 5; i++){
+                var randnum = Math.floor(Math.random() * data.length);
+                while(randSample.indexOf(randnum) > -1) {
+                  randnum = Math.floor(Math.random() * data.length);
+                }
+                randSample.push(randnum);
                 var sampleImage = images[i];
                 var sampleMake = "#sampleMake"+ (i+1);
                 var sampleModel = "#sampleModel"+ (i+1);
                 var samplePrice = "#samplePrice"+ (i+1);
                 var sampleYear = "#sampleYear"+ (i+1);
-                $(sampleImage).attr("src",data[i].carImageID);
-                $(sampleMake).text(data[i].make);
-                $(sampleModel).text(data[i].model);
-                $(samplePrice).text(data[i].price);
-                $(sampleYear).text(data[i].year);
+                $(sampleImage).attr("src",data[randnum].carImageID);
+                $(sampleMake).text(data[randnum].make);
+                $(sampleModel).text(data[randnum].model);
+                $(samplePrice).text(data[randnum].price);
+                $(sampleYear).text(data[randnum].year);
             }
         }
     }

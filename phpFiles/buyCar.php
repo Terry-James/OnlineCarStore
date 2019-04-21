@@ -23,5 +23,6 @@ $customerID = (int)$customerID;
 $carInsert = ("INSERT INTO transactions (carID, quantity, CustomerID) VALUES ($carID, 1, $customerID)");
 $insertQuery = mysqli_query($db, $carInsert);
 
-header('Location:/OnlineCarStore/store.html');
+mysqli_close($db);
+header('Location:/OnlineCarStore/orders.html');
 ?>

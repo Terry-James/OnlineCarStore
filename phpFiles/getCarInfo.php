@@ -22,5 +22,5 @@ while ($row = mysqli_fetch_assoc($sqlQuery)) { // while there are rows keep addi
     $data[] = $row;
 }
 echo json_encode($data); // encode data as json to be used by ajax call
-
+mysqli_close($db);
 ?>
