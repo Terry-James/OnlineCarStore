@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['email'])) {
   header("Location: index.html"); // return to login if email is not set
 }
-$admin = "omarcollado51@gmail.com";
+$admin = "thursday@email.com";
 if (strcmp($_SESSION['email'],$admin) != 0) {
   header("Location: ../index.html"); // return to login if email is not set
 }
