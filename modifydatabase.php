@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['email'])) {
   header("Location: index.html"); // return to login if email is not set
 }
-$admin = "omarcollado51@gmail.com";
+$admin = "test@testing.com";
 if (strcmp($_SESSION['email'],$admin) != 0) {
   header("Location: ../index.html"); // return to login if email is not set
 }
@@ -66,6 +66,7 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
     <div id="adding">
         <form action="./phpFiles/modify.php" method="POST">
             All fields are required:
+            <input type="file" name="image" value="" required>
             <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
             <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
             <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>

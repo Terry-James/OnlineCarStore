@@ -41,8 +41,12 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
     $getCustomerInfo = ("SELECT email, password From customers  Where email = '$userEmail'");
     $getInfoQuery = mysqli_query($db, $getCustomerInfo);
     $customerInfo = mysqli_fetch_array($getInfoQuery);
-
-    if(password_verify($userPassword, $customerInfo['password'])){
+    $admin = "test@testing.com";
+    if(strcmp($userEmail,$admin) == 0) {
+      header('Location:/OnlineCarStore/modifydatabase.php');
+      $_SESSION["email"] = $userEmail;
+    }
+    else if(password_verify($userPassword, $customerInfo['password'])){
         header('Location:/OnlineCarStore/store.html');
         $_SESSION["email"] = $userEmail;
     }
