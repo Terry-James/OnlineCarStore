@@ -57,7 +57,11 @@ body{
     margin-right: 25%;
 }
 
-.mainNav ul{
+.mainNav{
+    display: none;
+}
+
+.mainNav  ul{
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -109,6 +113,7 @@ body{
     border-radius: 5px;
 }
 #carSamples {
+    display: none;
     margin: 10px auto;
     text-align: center;
 }
@@ -129,6 +134,7 @@ body{
     border-radius: 2px;
 }
 #allCars{
+    display: none;
     margin: 5% 10% 0% 10%;
     background: #1c5d99;
     border-radius: 5px;
@@ -179,6 +185,7 @@ td{
     border-radius: 5px;
 }
 .orders {
+    display: none;
     text-align: center;
 }
 .orders table {
@@ -196,4 +203,8 @@ td{
     margin-right: auto;
     background: #1c5d99;
     border-radius: 5px;
+}
+
+#searchRes{
+    display: none;
 }

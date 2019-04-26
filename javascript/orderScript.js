@@ -12,9 +12,11 @@ $(document).ready(function () {
             var data = JSON.parse(this.responseText);
 
             if (data == false) {
+                alert("Please log in first");
                 window.location = "index.html";
             }
             else {
+                showElements();
                 var html = "";
                 for (let i = 0; i < data.length; i++) {
                     var transID = data[i].transID;
@@ -37,3 +39,8 @@ $(document).ready(function () {
         }
     }
 });
+
+function showElements(){
+    $('.orders').show();
+    $('.mainNav').show();
+}

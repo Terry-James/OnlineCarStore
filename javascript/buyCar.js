@@ -12,9 +12,11 @@ $(document).ready(function () {
             var data = JSON.parse(this.responseText); // return data from php as a json
 
             if (data == false) {
+                alert("Please log in first");
                 window.location = "index.html";
             }
             else {
+                showElements();
                 var html = "";
 
                 for (let i = 0; i < data.length; i++) {
@@ -41,3 +43,8 @@ $(document).ready(function () {
         }
     }
 });
+
+function showElements(){
+    $('#allCars').show();
+    $('.mainNav').show();
+}

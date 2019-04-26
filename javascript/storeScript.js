@@ -1,6 +1,5 @@
 $(document).ready(function () {
     hideElements();
-    $('#carSamples').show();
     var ajax = new XMLHttpRequest();
     var method = "GET";
     var url = "phpFiles/getCarInfo.php";
@@ -14,9 +13,11 @@ $(document).ready(function () {
             var data = JSON.parse(this.responseText);
             console.log(data);
             if (data == false) {
+                alert("Please log in first");
                 window.location = "index.html";
 
             } else {
+                showElements();
                 var images = $(".sampleImage");
                 var randSample = [];
                 for (let i = 0; i < 5; i++) {
@@ -41,9 +42,12 @@ $(document).ready(function () {
     }
 });
 
+function showElements(){
+    $('#carSamples').show();
+    $('.mainNav').show();
+}
+
 function hideElements() {
-    $('#updating').hide();
-    $('#deleting').hide();
-    $('#adding').hide();
     $('#carSamples').hide();
+    $('.mainNav').hide();
 }
