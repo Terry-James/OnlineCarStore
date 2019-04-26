@@ -16,12 +16,10 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
     <link rel="stylesheet" href="./cssFiles/siteStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./javascript/navScript.js"></script>
-    <script src="./javascript/storeScript.js"></script>
-    <script src="./javascript/allCarScript.js"></script>
     <title></title>
   </head>
   <body>
-    <div class="mainNav">
+    <div id="adminNav">
         <ul>
             <li><button class="logOut">log-out</button></li>
             <li><button class="home">Main Page</button></li>

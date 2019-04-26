@@ -7,6 +7,7 @@ $(document).ready(function(){ // loads all navigation buttons
     $(".addCar").click(addCars);
     $(".home").click(mainFloor);
     $(".subSearch").click(search);
+    hideElements();
 });
 
 function search(){
@@ -29,6 +30,12 @@ function orders(){
 
 function mainFloor(){
     location = "store.html";
+}
+
+function hideElements(){
+    $('#updating').hide();
+    $('#deleting').hide();
+    $('#adding').hide();
 }
 
 function updateCars(){

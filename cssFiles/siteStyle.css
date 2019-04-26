@@ -57,6 +57,32 @@ body{
     margin-right: 25%;
 }
 
+#adminNav  ul{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+
+}
+#adminNav button{
+    border-radius: 5px;
+    width: auto;
+    color: #f2fff3;
+    height: 25px;
+    background: #81d2c7;
+    border-color: #81d2c7;
+}
+#adminNav button:hover{
+    background-color:#5ea3a3;
+    border-color: #5ea3a3;
+}
+#adminNav li{
+    list-style-type: none;
+    float: left;
+    color: #f2fff3;
+    padding: 10px;
+    margin-left: 10px;
+}
+
 .mainNav{
     display: none;
 }

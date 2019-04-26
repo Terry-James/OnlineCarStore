@@ -13,7 +13,7 @@ else{
 
     $dataArray = array();
     $userSearch = $_REQUEST['q'];
-    $searchSql = ("SELECT * FROM carInfo WHERE make Like '%$userSearch%'");
+    $searchSql = "SELECT * FROM carInfo WHERE make Like '%$userSearch%'";
     $searchQuery = mysqli_query($db, $searchSql);
     while($row = mysqli_fetch_assoc($searchQuery)){
         $dataArray[] = $row;

@@ -15,15 +15,15 @@ $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't conne
 $HiddentInput = $_POST['hiddenData'];
 
 if ($HiddentInput=="LogIn"){
-    $userEmail = $_POST['userEmail'];
-    $userPassword = $_POST['userPassword'];
+    $userEmail = mysqli_real_escape_string($db, $_POST['userEmail']);
+    $userPassword = mysqli_real_escape_string($db,$_POST['userPassword']);
     HandleLogInFunction($db, $userEmail, $userPassword);
 }
 else{
-    $email = $_POST['email'];
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $password = $_POST['password'];
+    $email = mysqli_real_escape_string($db,$_POST['email']);
+    $firstName = mysqli_real_escape_string($db,$_POST['firstName']);
+    $lastName = mysqli_real_escape_string($db,$_POST['lastName']);
+    $password = mysqli_real_escape_string($db,$_POST['password']);
     $hashPassword = password_hash($password, PASSWORD_DEFAULT);
     HandleRegisterationFunction($db, $email, $firstName, $lastName, $hashPassword);
 }
