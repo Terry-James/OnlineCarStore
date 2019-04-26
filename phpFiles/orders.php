@@ -1,9 +1,9 @@
 <?php
-  session_start();
-  if (!isset($_SESSION['email'])) {
-    header("Location: index.html"); // return to login if email is not set
-  }
-
+session_start();
+if (!isset($_SESSION['email'])) {
+  $transactionsArray = false;
+}
+else{
   $db_host = 'localhost';
   $db_username = 'root';
   $db_pass = '';
@@ -24,7 +24,7 @@
     while($row = mysqli_fetch_assoc($sqlfindtransactionsquery)){
         $transactionsArray[] = $row;
     }
-    echo json_encode($transactionsArray);
-
     mysqli_close($db);
+}
+echo json_encode($transactionsArray);
 ?>
