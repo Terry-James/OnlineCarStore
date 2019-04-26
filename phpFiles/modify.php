@@ -48,6 +48,7 @@ else if($hiddenValue == "update"){ // used to update information about a car in 
     }
 }
 else{ // used to add a car to the database
+    $image = $_POST[''];
     $addMake = $_POST['addMake'];
     $addModel = $_POST['addModel'];
     $addPrice = $_POST['addPrice'];
