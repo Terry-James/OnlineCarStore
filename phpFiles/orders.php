@@ -9,8 +9,10 @@ else{
   $db_pass = '';
   $db_name = 'carstoredata';
 
+  // grab email of current user
   $emailSearch = $_SESSION['email'];
 
+  // open database connection
   $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
     $transactionsArray = array();
@@ -24,7 +26,7 @@ else{
     while($row = mysqli_fetch_assoc($sqlfindtransactionsquery)){
         $transactionsArray[] = $row;
     }
-    mysqli_close($db);
+    mysqli_close($db); // close database connection
 }
-echo json_encode($transactionsArray);
+echo json_encode($transactionsArray); // return back json with queried data
 ?>

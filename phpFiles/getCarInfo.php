@@ -21,7 +21,6 @@ if(!isset($_SESSION['email'])){
     while ($row = mysqli_fetch_assoc($sqlQuery)) { // while there are rows keep adding them to data variable
         $data[] = $row;
     }
-    
     mysqli_close($db);
 }
 echo json_encode($data); // encode data as json to be used by ajax call

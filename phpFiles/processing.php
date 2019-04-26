@@ -10,16 +10,21 @@ $db_username = 'root';
 $db_pass = '';
 $db_name = 'carstoredata';
 
+// open database connection
 $db = new mysqli($db_host, $db_username, $db_pass, $db_name) or die("Can't connect to MySQL Server");
 
+// used to figure out which form to check
 $HiddentInput = $_POST['hiddenData'];
 
+// Login
 if ($HiddentInput=="LogIn"){
+    // escape string to remove unwanted inputs to prevent sql injection
     $userEmail = mysqli_real_escape_string($db, $_POST['userEmail']);
     $userPassword = mysqli_real_escape_string($db,$_POST['userPassword']);
     HandleLogInFunction($db, $userEmail, $userPassword);
 }
-else{
+else{// Registration
+    // escape string to remove unwanted inputs to prevent sql injection
     $email = mysqli_real_escape_string($db,$_POST['email']);
     $firstName = mysqli_real_escape_string($db,$_POST['firstName']);
     $lastName = mysqli_real_escape_string($db,$_POST['lastName']);
@@ -28,6 +33,7 @@ else{
     HandleRegisterationFunction($db, $email, $firstName, $lastName, $hashPassword);
 }
 
+// function to handle registration
 function HandleRegisterationFunction($db,$email, $firstName, $lastName, $hashPassword){
 
     $addingUser = ("INSERT INTO customers(email,firstName,lastName,password) VALUES ('$email','$firstName','$lastName', '$hashPassword')");
@@ -35,7 +41,7 @@ function HandleRegisterationFunction($db,$email, $firstName, $lastName, $hashPas
     header('Location:/OnlineCarStore/index.html');
 }
 
-
+// function to handle login
 function HandleLogInFunction($db, $userEmail, $userPassword){
 
     $getCustomerInfo = ("SELECT email, password From customers  Where email = '$userEmail'");
@@ -44,15 +50,15 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
     $admin = "test@testing.com";
     if(strcmp($userEmail,$admin) == 0) {
       header('Location:/OnlineCarStore/modifydatabase.php');
-      $_SESSION["email"] = $userEmail;
+      $_SESSION["email"] = $userEmail; // set session variable to user email
     }
     else if(password_verify($userPassword, $customerInfo['password'])){
         header('Location:/OnlineCarStore/store.html');
-        $_SESSION["email"] = $userEmail;
+        $_SESSION["email"] = $userEmail; // set session variable to user email
     }
     else{
         header('Location:/OnlineCarStore/index.html');
     }
 }
-mysqli_close($db);
+mysqli_close($db); // close database connection
 ?>
