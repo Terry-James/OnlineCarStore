@@ -23,7 +23,6 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
     <div id="adminNav">
         <ul>
             <li><button class="logOut">log-out</button></li>
-            <li><button class="home">Main Page</button></li>
             <li><button class="addCar">Add Car</button></li>
             <li><button class="updateCar">Update Car</button></li>
             <li><button class="deleteCar">Delete Car</button></li>
