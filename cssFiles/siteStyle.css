@@ -19,6 +19,7 @@ body{
     background-size: cover;
     background-position: center;
     font-weight: bold;
+    color: white;
     font-size: 20pt;
     text-shadow: 2px 4px 4px #373F51;
     margin: 0;
@@ -128,6 +129,10 @@ body{
   margin-bottom: 20px;
   margin-left: 30px;
 }
+#buyButton {
+  padding: 5px 10px;
+
+}
 .column{
     max-width: 600px;
     padding-top: 5px;
@@ -162,10 +167,9 @@ body{
 #allCars{
     display: none;
     margin: 5% 10% 0% 10%;
-    background: #1c5d99;
     border-radius: 5px;
 }
-.tRows{
+.tRows, tr{
     padding: 20px;
     width: 200px;
 
@@ -178,7 +182,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 } */
-td{
+td, th{
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -188,19 +192,22 @@ td{
     border-collapse: collapse;
     width: 100%;
     padding: 10px;
+    background: #1c5d99;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
 }
-.add_update_delete{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    float: right;
-}
+
 #addButton{
-    margin-left: 65%;
+    margin-left: 100px;
     margin-top: 2%;
     border-radius: 5px;
+}
+.addform {
+  padding: 10px;
+  border: 2px solid black;
+  background: #1c5d99;
+  text-align: center;
 }
 .addInputs{
     display: block;
@@ -222,15 +229,23 @@ td{
 }
 
 #adding{
-    max-width: 200px;
+    width: 30%;
     padding: 5px;
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    background: #1c5d99;
+
     border-radius: 5px;
 }
 
 #searchRes{
     display: none;
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.TableContainer {
+  width: 80%;
+  margin: 0 auto;
 }

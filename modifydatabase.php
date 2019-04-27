@@ -16,6 +16,7 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
     <link rel="stylesheet" href="./cssFiles/siteStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./javascript/navScript.js"></script>
+    <script src="./javascript/allCarScript.js" charset="utf-8"></script>
     <title></title>
   </head>
   <body>
@@ -27,29 +28,24 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
             <li><button class="updateCar">Update Car</button></li>
             <li><button class="deleteCar">Delete Car</button></li>
             <form id="searchBar" action="searchResult.html">
-                <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
+                <input type="text" name="search" class="searchInput" placeholder="Search by make">
                 <button class="subSearch">Submit</button>
             </form>
         </ul>
     </div>
     <div id="updating">
-      <h2>Fill out the Car ID and what you want to update.</h2>
-        <form action="./phpFiles/modify.php" method="POST">
-            <input type="text" name="updateInput" placeholder="Enter car id">
-            <input type="text" name="updateMake" placeholder="Enter new car make">
-            <input type="text" name="updateModel" placeholder="Enter new car model">
-            <input type="text" name="updatePrice" placeholder="Enter new car price">
-            <input type="text" name="updateYear" placeholder="Enter new car year">
-            <input type="hidden" name="hiddenData" value="update">
-            <input type="submit" name="submit">
-        </form>
-    </div>
-    <div id="deleting">
-        <form action="./phpFiles/modify.php" method="POST" class="add_update_delete">
-            <input type="text" name="deleteInput" placeholder="Enter car id">
-            <input type="hidden" name="hiddenData" value="delete">
-            <input type="submit" name="submit">
-        </form>
+
+        <div class="TableContainer">
+          <h2>Fill out the Car ID and what you want to update.</h2>
+            <form action="./phpFiles/modify.php" method="POST">
+                <input type="text" name="updateInput" placeholder="Enter car id">
+                <input type="text" name="updateMake" placeholder="Enter new car make">
+                <input type="text" name="updateModel" placeholder="Enter new car model">
+                <input type="text" name="updatePrice" placeholder="Enter new car price">
+                <input type="text" name="updateYear" placeholder="Enter new car year">
+                <input type="hidden" name="hiddenData" value="update">
+                <input type="submit" name="submit">
+            </form>
         <table class="information">
             <tr>
                 <th>Make</th>
@@ -60,11 +56,33 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
             </tr>
             <tbody class="tableData"></tbody>
         </table>
+        </div>
+    </div>
+    <div id="deleting">
+        <div class="TableContainer">
+          <h2>Delete a Car from the database</h2>
+          <form action="./phpFiles/modify.php" method="POST">
+              <input type="text" name="deleteInput" placeholder="Enter car id">
+              <input type="hidden" name="hiddenData" value="delete">
+              <input type="submit" name="submit">
+          </form>
+        <table class="information">
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>ID</th>
+            </tr>
+            <tbody class="tableData"></tbody>
+        </table>
+        </div>
     </div>
     <div id="adding">
-        <form action="./phpFiles/modify.php" method="POST">
-            All fields are required:
-            <input type="file" name="image" value="" required>
+      <h2>Add a new car to database</h2>
+        <form  class="addform" action="./phpFiles/modify.php" method="POST">
+            <h2>All Fields are Required</h2>
+            <input type="file" name="image" class="addInputs" value="" required>
             <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
             <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
             <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>

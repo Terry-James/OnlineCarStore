@@ -20,14 +20,15 @@
             <li><button class="viewCars"> View Cars </button></li>
             <li><button class="viewOrders"> View Orders</button></li>
             <form id="searchBar" action="searchResult.html">
-                <input type="text" name="search" class="searchInput" placeholder="Search by make or model">
+                <input type="text" name="search" class="searchInput" placeholder="Search by make">
                 <button class="subSearch">Submit</button>
             </form>
         </ul>
     </div>
     <div class="orders">
         <h1>Your Orders</h1>
-        <table>
+        <div class="TableContainer">
+        <table class="information">
             <tr>
                 <th>Transaction ID</th>
                 <th>Car Type</th>
@@ -36,6 +37,7 @@
             </tr>
             <tbody id="infoTable"></tbody>
         </table>
+        </div>
     </div>
 </body>
 
