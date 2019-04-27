@@ -80,9 +80,9 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
     </div>
     <div id="adding">
       <h2>Add a new car to database</h2>
-        <form  class="addform" action="./phpFiles/modify.php" method="POST">
-            <h2>All Fields are Required</h2>
-            <input type="file" name="image" class="addInputs" value="" required>
+        <form  class="addform" action="./phpFiles/modify.php" method="POST" enctype="multipart/form-data">
+            <h2>All Fields are Requ</h2>
+            <input type="file" name="addFiles" class="addInputs" value="" required>
             <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
             <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
             <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>
