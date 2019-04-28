@@ -49,7 +49,7 @@ function HandleLogInFunction($db, $userEmail, $userPassword){
     $customerInfo = mysqli_fetch_array($getInfoQuery);
     $admin = "test@testing.com";
     if(strcmp($userEmail,$admin) == 0) {
-      header('Location:/OnlineCarStore/modifydatabase.php');
+      header('Location:/OnlineCarStore/modifydatabase.html');
       $_SESSION["email"] = $userEmail; // set session variable to user email
     }
     else if(password_verify($userPassword, $customerInfo['password'])){

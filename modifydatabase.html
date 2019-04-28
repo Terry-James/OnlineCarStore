@@ -1,14 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['email'])) {
-  header("Location: index.html"); // return to login if email is not set
-}
-$admin = "test@testing.com";
-if (strcmp($_SESSION['email'],$admin) != 0) {
-  header("Location: ../index.html"); // return to login if email is not set
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -81,7 +70,7 @@ if (strcmp($_SESSION['email'],$admin) != 0) {
       <h2>Add a new car to database</h2>
         <form  class="addform" action="./phpFiles/modify.php" method="POST" enctype="multipart/form-data">
             <h2>All Fields are Required</h2>
-            <input type="file" name="addFiles" class="addInputs" value="" required>
+            <input type="text" name="addFiles" class="addInputs" placeholder="Enter file name" required>
             <input type="text" class="addInputs" name="addMake" placeholder="Enter car make" required>
             <input type="text" class="addInputs" name="addModel" placeholder="Enter car model" required>
             <input type="text" class="addInputs" name="addPrice" placeholder="Enter car price" required>

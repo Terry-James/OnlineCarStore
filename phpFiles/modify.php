@@ -48,47 +48,18 @@ else if($hiddenValue == "update"){ // used to update information about a car in 
     }
 }
 else{ // used to add a car to the database
-    $addMake = $_POST['addMake'];
-    $addModel = $_POST['addModel'];
-    $addPrice = $_POST['addPrice'];
-    $addYear = $_POST['addYear'];
-    $imageLoc = "images/";
-    $addimageLoc = $imageLoc . basename($_FILES["addFiles"]["name"]);
+  $addFile = $_POST['addFiles'];   
+  $addMake = $_POST['addMake'];
+  $addModel = $_POST['addModel'];
+  $addPrice = $_POST['addPrice'];
+  $addYear = $_POST['addYear'];
+  $imageLoc = "images/";
 
-    $target_dir = "../images/";
-    $target_file = $target_dir . basename($_FILES["addFiles"]["name"]);
-    print_r($target_file);
-    $uploadOK = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO__EXTENSION));
+  $stringImage = $imageLoc.$addFile;
+  
 
-    if(isset($_POST["submit"])) {
-      $check = getimagesize($_FILES["addFiles"]["tmp_name"]);
-      if($check !== false) {
-        echo "File is an image " .$check["mime"]. ".";
-      }
-      else {
-        echo "File not immage";
-        $uploadOK = 0;
-      }
-    }
-    if($_FILES["addFiles"]["size"] > 5000000) {
-      echo "Please use smaller file";
-      $uploadOK = 0;
-    }
-    if($uploadOK == 0) {
-
-    }
-    else {
-      if(move_uploaded_file($_FILES["addFiles"]["tmp_name"], $target_file)) {
-        echo "The File uploaded";
-      }
-      else {
-
-      }
-    }
-    $addSql = ("INSERT INTO carInfo(carImageID,make,model,price,year) VALUES ('$addimageLoc','$addMake','$addModel','$addPrice','$addYear')");
-    $addQuery = mysqli_query($db, $addSql);
+  $addSql = ("INSERT INTO carInfo(carImageID,make,model,price,year) VALUES ('$stringImage','$addMake','$addModel','$addPrice','$addYear')");
+  $addQuery = mysqli_query($db, $addSql);
 }
 mysqli_close($db);
-header("Location: ../modifydatabase.php");
-?>
+header("Location: ../modifydatabase.html");

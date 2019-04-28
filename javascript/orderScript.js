@@ -10,8 +10,12 @@ $(document).ready(function () {
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
+            console.log(data);
 
-            if (data == false) {
+            if (data.length == 0){
+                window.location = "store.html";
+            }
+            else if (data == false) {
                 alert("Please log in first");
                 window.location = "index.html";
             }
